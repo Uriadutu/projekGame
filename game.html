@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Ular-Ular</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #091d38;
+        font-family: Arial, sans-serif;
+      }
+      canvas {
+        background-color: #f2f0ff;
+        border: 2px solid rgb(238, 255, 6);
+      }
+      .tampil {
+        padding: 30px;
+      }
+      .komponen {
+        color: aliceblue;
+      }
+      #gameOver,
+      #pauseMenu {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border: 1px solid black;
+        text-align: center;
+      }
+      #pauseMenu button,
+      #gameOver button {
+        margin: 10px;
+      }
+      .mainlagi {
+        background-color: rgb(22, 194, 22);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 6px;
+        border: #999;
+      }
+      #resumeButton {
+        background-color: rgb(22, 194, 22);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 6px;
+        border: #999;
+      }
+      #restartButton {
+        background-color: rgb(255, 145, 0);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 6px;
+        border: #999;
+      }
+      #exitButton, #keluarButton {
+        background-color: rgb(255, 0, 0);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 6px;
+        border: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tampil">
+      <div class="komponen">
+        <h3>Score: <span id="score">0</span></h3>
+        <h4>Score Tertinggi: <span id="highscore">0</span></h4>
+      </div>
+      <canvas id="gameCanvas" width="400" height="400"></canvas>
+      <!-- <h4>Space untuk pause</h4> -->
+    </div>
+    <div id="gameOver">
+      <h2>Game Over</h2>
+      <p>Score: <span id="finalScore">0</span></p>
+      <button id="continueButton" class="mainlagi">Main Lagi</button>
+      <button id="exitButton">Keluar</button>
+    </div>
+    <div id="pauseMenu">
+      <h2>Game Dijeda</h2>
+      <button id="resumeButton">Lanjutkan</button>
+      <button id="restartButton">Main Lagi</button>
+      <button id="keluarButton">Keluar</button>
+    </div>
+    <script src="snake.js"></script>
+  </body>
+</html>
