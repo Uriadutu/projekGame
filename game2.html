@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lompat</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #091d38;
+        font-family: Arial, sans-serif;
+      }
+      canvas {
+        border: 1px solid black;
+        
+        background-color: #fcffe1;
+      }
+      .status {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: white;
+      }
+
+      .game-over {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        border-radius: 10px;
+        z-index: 999;
+      }
+
+      .popup-content {
+        text-align: center;
+      }
+      #resumeButton, 
+      .mainlagi {
+        background-color: rgb(22, 194, 22);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 6px;
+        border: #999;
+      }
+      #restartButton {
+        background-color: rgb(255, 145, 0);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 6px;
+        border: #999;
+      }
+      #exitButton,
+      .keluar {
+        background-color: rgb(255, 0, 0);
+        padding: 10px 20px;
+        color: white;
+        border-radius: 6px;
+        border: #999;
+      }
+      #gameOver {
+          display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border: 1px solid black;
+        text-align: center;
+      }
+      #pauseMenu {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border: 1px solid black;
+        text-align: center;
+      }
+      .tombol {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pausePopup" class="popup">
+      <div class="popup-content" id="pauseMenu">
+        <h2>Game Dijeda</h2>
+        <div class="tombol">
+          <button id="resumeButton">Lanjutkan</button>
+          <button id="keluarButton" class="keluar">Keluar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="status">
+      <h3>Score: <span id="score">0</span></h3>
+
+      <div>
+        <p>High Score: <span id="highScore">0</span></p>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div class="" id="gameOver">
+      <h1>Game Over</h1>
+      <p>Your score: <span id="finalScore">0</span></p>
+      <button id="retryButton" class="mainlagi">Main lagi</button>
+      <button class="keluar" id="exitButton">Keluar</button>
+    </div>
+    <script src="game.js"></script>
+  </body>
+</html>
